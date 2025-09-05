@@ -11,17 +11,12 @@ const Profile = ({
   status = 'offline',
   hasPhisicalAddress,
 }) => {
-  console.log('css: ', css);
+  const handleClisk = () => {
+    alert('Hello');
+  };
 
   return (
     <div
-      /* className={`profile ${hasPhisicalAddress ? "hasPhisicalAddress" : ""}`}> */
-      /* className={className.join(" ")}> */
-      /* className={clsx("profile", hasPhisicalAddress && "hasPhisicalAddress")}> */
-      /* className={clsx("profile", {
-        "hasPhisicalAddress" : hasPhisicalAddress === true
-      })}> */
-      
       className={clsx(
         css.profile,
         hasPhisicalAddress && css.hasPhisicalAddress,
@@ -42,9 +37,12 @@ const Profile = ({
       >
         Status: {status === 'online' ? <RiRadioButtonLine /> : <CiStreamOff />}
       </p>
+      <button type="button" onClick={handleClisk}>
+        Click to Alert{' '}
+      </button>
     </div>
     // gg
-  )
+  );
 };
 
 export default Profile;
