@@ -10,11 +10,8 @@ const Profile = ({
   email,
   status = 'offline',
   hasPhisicalAddress,
+  handleClisk,
 }) => {
-  const handleClisk = () => {
-    alert('Hello');
-  };
-
   return (
     <div
       className={clsx(
@@ -37,7 +34,7 @@ const Profile = ({
       >
         Status: {status === 'online' ? <RiRadioButtonLine /> : <CiStreamOff />}
       </p>
-      <button type="button" onClick={handleClisk}>
+      <button type="button" onClick={() => handleClisk(name)}>
         Click to Alert{' '}
       </button>
     </div>
